@@ -23,7 +23,6 @@ export function useProducts() {
     const res = await fetch(`https://dummyjson.com/products/search?q=${q}`)
     const data = await res.json()
     products.value = data.products
-    
     loading.value = false
   }
 
