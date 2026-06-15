@@ -1,3 +1,16 @@
+/* These 3 lines inject all of Tailwind's styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-font-smoothing: antialiased; /* Makes text crisp on Mac/Chrome */
+  }
+
+  /* Hide scrollbar utility class we use on FilterBar */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}
